@@ -13,8 +13,23 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
     <?php
     include 'config.php';
+    if(isset($_POST['amFlorentinSinName'])) {
+        $Nutzername = $_POST['inputExNutzername'];
+        $Passwort = $_POST['inputExPasswort'];
+
+        $amFlorentinSiniVariable = $db->query("select * from TNutzer where NutNummer = '$Nutzername' and NutPasswort = '$Passwort'");
+
+        while ($dsatz = $amFlorentinSiniVariable->fetchArray(SQLITE3_ASSOC)) {
+            header('Location: ./videoclips.php');
+        }
+
+        echo "Spasst";
+
+    }
+
     ?>
 
 </head>
@@ -38,25 +53,26 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h1 class="mt-5">Login<br><br></h1>
-            <form name="formular" method="post" action="videoclips.php" >
+            <form name="formular" method="post" action="index.php" >
 
                 <label for="inputNutzername">Nutzername</label>
-                <input type="text" class="form-control" name="inputNutzername" id="inputNutzername" placeholder="1038856">
+                <input type="text" class="form-control" name="inputExNutzername" id="inputExNutzername" placeholder="1038856" required>
 
                 <label for="inputPasswort">Passwort</label>
-                <input type="password" class="form-control" name="inputPasswort" id="inputPasswort" placeholder="geheim">
+                <input type="password" class="form-control" name="inputExPasswort" id="inputExPasswort" placeholder="geheim" required>
+
+                <br>
+                <button type="submit" class="btn btn-primary" name="amFlorentinSinName">einloggen</button>
+
             </form>
 
-            <br>
-            <button type="submit" class="btn btn-primary">einloggen</button>
+
 
         </div>
     </div>
 </div>
 
-<?php
-include 'config.php';
-?>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

@@ -33,49 +33,29 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h1 class="mt-5">Registrierung<br><br></h1>
-            <form name="formular" method="post" action="videoclips.php" >
+            <form name="formular" method="post" action="insertUser.php" >
 
                 <label for="inputNutzername">Nutzername</label>
-                <input type="text" class="form-control" name="inputNutzername" id="inputNutzername" placeholder="1038856">
+                <input type="text" class="form-control" name="inputNutzername" id="inputNutzername" placeholder="1038856" required>
 
                 <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="max.muster@stud.kftg.ch">
+                <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="max.muster@stud.kftg.ch" required>
 
                 <label for="inputPasswort">Passwort</label>
-                <input type="password" class="form-control" name="inputPasswort" id="inputPasswort" placeholder="geheim">
+                <input type="password" class="form-control" name="inputPasswort" id="inputPasswort" placeholder="geheim" required>
 
                 <label for="inputPasswortBestaetigung">Passwortbestätigung</label>
-                <input type="password" class="form-control" name="inputPasswortBestaetigung" id="inputPasswortBestaetigung" placeholder="geheim">
-             </form>
+                <input type="password" class="form-control" name="inputPasswortBestaetigung" id="inputPasswortBestaetigung" placeholder="geheim" required>
 
-            <br>
+                <br>
+                <button type="submit" class="btn btn-primary" name="submitRegistrieren" >registrieren</button>
 
-            <button type="submit" class="btn btn-primary">registrieren</button>
+            </form>
 
-        </div>
+</div>
     </div>
 </div>
 
-<?php
-
-    include 'config.php';
-
-/*    $NutzerRegistration = $_POST['inputNutzername'.'inputEmail'.'inputPasswort'];
-
-    $sqlstr = "INSERT INTO personen (NutNutzername, NutEmail, NutPasswort) VALUES ";
-    $db->query($sqlstr . "$NutzerRegistration");
-
-    echo $NutzerRegistration;
-*/
-
-
-//$Nutzername = $_POST['inputNutzername'];
-//$Email = $_POST['inputEmail'];
-//$Passwort = $_POST['inputPasswort'];
-//$Passwort = $_POST['inputPasswortBestaetigung'];
-
-// $res = $db->query(SELECT * from TNutzer);
-?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
